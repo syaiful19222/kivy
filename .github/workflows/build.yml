@@ -45,12 +45,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install aidl
 
-      - name: Install Android Build Tools
-        run: |
-          mkdir -p ~/.buildozer/android/platform/android-sdk/tools/bin/
-          export PATH="$PATH:~/.buildozer/android/platform/android-sdk/tools/bin/"
-          echo "y" | sdkmanager "build-tools;29.0.0"
-
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
